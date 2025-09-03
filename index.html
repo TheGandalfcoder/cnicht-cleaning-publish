@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="page_title">Cnicht Cleaning Services</title>
+    <link rel="icon" type="image/png" href="image/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen dark:bg-gray-900 dark:text-gray-100">
+    <!-- Video Header -->
+    <header class="relative w-full h-64 md:h-96 overflow-hidden flex items-center justify-center dark:bg-gray-900">
+        <video class="absolute top-0 left-0 w-full h-full object-cover" src="image/header.mp4" autoplay loop muted playsinline></video>
+        <div class="relative z-10 w-full h-full flex flex-col items-center justify-center bg-black bg-opacity-40">
+            <img src="image/logo.png" alt="Cnicht Cleaning Services Logo" class="h-25 w-25 mb-2 md:mb-0 md:mr-3 inline-block align-middle" style="object-fit:contain;" />
+            <span class="font-bold text-3xl md:text-5xl text-white drop-shadow mb-2 text-center" data-translate-key="site_title">Cnicht Cleaning Services</span>
+            <span class="text-white text-lg md:text-xl mb-1 text-center" data-translate-key="phone">07717 882687</span>
+            
+            <span class="text-white text-lg md:text-xl text-center" data-translate-key="email">info@cnichtcleaningservices.uk</span>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
+    </header>
+    <!-- Consistent Navigation Bar -->
+    <nav class="bg-white shadow w-full relative sticky top-0 z-50 dark:bg-gray-800 dark:shadow-lg">
+        <div class="container mx-auto flex justify-between items-center py-3 px-6">
+            <!-- Burger menu button for mobile -->
+            <button id="burgerMenuBtn" class="md:hidden flex items-center px-2 py-1 border rounded text-green-700 border-green-700 dark:text-green-300 dark:border-green-300 focus:outline-none" aria-label="Open menu">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <!-- Nav links -->
+            <div id="navLinks" class="hidden md:flex space-x-4 items-center">
+                <a href="index.html" class="text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_home">Home</a>
+                <a href="services.html" class="text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_services">Services</a>
+                <a href="gallery.html" class="text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_gallery">Gallery</a>
+                <a href="contact.html" class="text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_contact">Contact</a>
+            </div>
+            <!-- Language and Dark Mode Toggles -->
+            <div class="flex items-center gap-3 ml-4">
+                <span id="langLabelEn" class="font-semibold transition-colors duration-300"></span>
+                <button id="translateToggle" class="relative inline-flex h-9 w-20 items-center rounded-full bg-gray-300 dark:bg-gray-600 transition-colors duration-300 ring-2 ring-transparent focus:outline-none focus:ring-green-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+                    <span id="langToggleThumb" class="inline-block h-8 w-8 transform rounded-full bg-white dark:bg-gray-100 shadow-md transition-transform duration-300 ease-in-out flex items-center justify-center translate-x-1" style="transition: transform 0.3s ease;">
+                        <span id="langToggleIcon" class="text-green-700 dark:text-green-300 font-bold text-sm"></span>
+                    </span>
+                </button>
+                <span id="langLabelCy" class="font-semibold transition-colors duration-300"></span>
+                <button id="darkModeToggle" class="relative inline-flex h-8 w-14 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                    <span class="inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition-transform duration-300 ease-in-out" id="toggleIcon">
+                        <!-- Sun/Moon SVG will be injected here -->
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-gray-800 px-6 pb-4">
+            <a href="index.html" class="block py-2 text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_home">Home</a>
+            <a href="services.html" class="block py-2 text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_services">Services</a>
+            <a href="gallery.html" class="block py-2 text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_gallery">Gallery</a>
+            <a href="contact.html" class="block py-2 text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 container mx-auto px-4 py-8 dark:bg-gray-900">
+        <!-- Welcome Section -->
+        <section id="home" class="text-center mb-10 fade-in">
+            <h1 class="text-4xl font-bold mb-2 text-green-700 dark:text-green-300" data-translate-key="welcome_title">Welcome to<br>Cnicht Cleaning Services</h1>
+            <p class="text-lg mb-4" data-translate-key="welcome_desc">With 14 years of experience in the industry, Cnicht Cleaning Services has honed its skills and perfected its craft to provide you with the best cleaning services possible.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mt-6">
+                <a href="#services" class="bg-green-600 text-white px-6 py-2 rounded shadow hover:bg-green-700 dark:bg-green-800 dark:hover:bg-green-900" data-translate-key="welcome_services_btn">Our Services</a>
+                <a href="#contact" class="bg-green-600 text-white px-6 py-2 rounded shadow hover:bg-green-700 dark:bg-green-800 dark:hover:bg-green-900" data-translate-key="welcome_contact_btn">Contact us</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="bg-white rounded-lg shadow p-6 mb-10 max-w-3xl mx-auto dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-1">
+            <h2 class="text-2xl font-bold text-green-700 mb-2 dark:text-green-300" data-translate-key="about_title">About Cnicht Cleaning Services</h2>
+            <p class="mb-2" data-translate-key="about_desc">Cnicht Cleaning Services is a family-owned and eco-conscious cleaning company specialising in holiday home and deep cleaning services with over 14 years of experience. They are committed to providing top-notch cleaning solutions tailored to your needs.</p>
+            <p class="mb-2"><span class="font-semibold" data-translate-key="about_based">Based in Snowdonia, North Wales:</span> <span data-translate-key="about_based_desc">Nestled in the breathtaking beauty of Snowdonia, North Wales, Cnicht Cleaning Services finds inspiration in its stunning surroundings. They serve the picturesque region of Gwynedd and its surrounding areas.</span></p>
+            <p class="mb-2"><span class="font-semibold" data-translate-key="about_excellence">Bringing Cleaning Excellence to You:</span> <span data-translate-key="about_excellence_desc">Cnicht Cleaning Services offers mobile cleaning services, ensuring convenience, professionalism, and expertise at your doorstep. Whether you need a one-off deep clean or regular maintenance, their team can meet all your cleaning needs.</span></p>
+        </section>
+        
+        <!-- Professional Divider Image 1 -->
+        <section class="mb-10 max-w-6xl mx-auto fade-in fade-in-delay-1">
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/IMG_0559.JPEG" alt="Professional Cleaning Service" class="w-full h-64 md:h-80 object-cover"/>
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2" data-translate-key="divider1_title">Professional Excellence</h3>
+                        <p class="text-lg md:text-xl" data-translate-key="divider1_desc">Delivering quality cleaning services with attention to detail</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10 max-w-4xl mx-auto fade-in fade-in-delay-2">
+            <h2 class="text-2xl font-bold text-green-700 mb-4 text-center dark:text-green-300" data-translate-key="usp_title">Unique Selling Points</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-3">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_friendly_title">Friendly and Professional Service</h3>
+                    <p data-translate-key="usp_friendly_desc">Known for their friendly and professional approach, the team at Cnicht Cleaning Services treats your space as if it were their own, adding a personal touch to every cleaning job.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-4">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_insured_title">Fully Insured</h3>
+                    <p data-translate-key="usp_insured_desc">Cnicht Cleaning Services is fully insured, safeguarding you and your property. They stay updated on fire safety changeover procedures and maintain digital records for all clients, ensuring compliance. Their staff members undergo fire warden training, contributing to a heightened level of safety.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-5">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_eco_title">Ethical and Eco-Friendly</h3>
+                    <p data-translate-key="usp_eco_desc">As an ethically run business, they specialise in eco-friendly cleaning services, demonstrating a commitment to preserving the environment.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-1">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_history_title">Company History</h3>
+                    <p data-translate-key="usp_history_desc">Established as a partnership in 2019, Cnicht Cleaning Services has evolved into two separate businesses: Cnicht Cleaning Services and Cnicht External Cleaning Services. This recent development reflects their commitment to providing specialised and tailored cleaning solutions to meet your needs.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-2">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_experience_title">Experience That Counts</h3>
+                    <p data-translate-key="usp_experience_desc">With cleaning experience dating back to 2010, their team has built a solid foundation of expertise and excellence. Their journey began with a vision to offer top-quality, ethical, and professional cleaning services to the local Gwynedd community and beyond.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-3">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_trusted_title">Trusted by Leading Names</h3>
+                    <p data-translate-key="usp_trusted_desc">Their commitment to excellence has earned them the trust of some of the most respected organisations in the industry. They are proud to be a preferred supplier for Sykes and Snowdonia tourist services in the Beddgelert area, a recognition of the quality and reliability they bring to their services. They are also proud to work with National Trust and Forest Holidays.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-4">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_tourism_title">Beddgelert Tourism Member</h3>
+                    <p data-translate-key="usp_tourism_desc">Cnicht Cleaning Services is also proud to be a member of Beddgelert Tourism, a highly regarded federation. This affiliation highlights their unwavering commitment to providing exceptional cleaning services. By partnering with Beddgelert Tourism, they consistently uphold industry-leading standards.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-5">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_ecoex_title">Eco-Friendly Cleaning Excellence</h3>
+                    <p data-translate-key="usp_ecoex_desc">Cnicht Cleaning Services specialises in eco-friendly cleaning services, maintaining high-quality standards in every task they undertake.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-4 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-2">
+                    <h3 class="font-semibold mb-1" data-translate-key="usp_join_title">Join Their Team</h3>
+                    <p data-translate-key="usp_join_desc">Cnicht Cleaning Services is seeking dedicated staff who share their passion for cleaning. If you want to be a part of their positive workplace, please get in touch. Their friendly and happy environment is filled with great vibes, reflecting the quality of their services and the positive atmosphere they foster.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Divider Image 2 -->
+        <section class="mb-10 max-w-6xl mx-auto fade-in fade-in-delay-1">
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/IMG_1998.JPEG" alt="Eco-Friendly Cleaning Solutions" class="w-full h-64 md:h-80 object-cover"/>
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2" data-translate-key="divider2_title">Eco-Friendly Solutions</h3>
+                        <p class="text-lg md:text-xl" data-translate-key="divider2_desc">Committed to environmentally responsible cleaning practices</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="mb-10 max-w-4xl mx-auto fade-in fade-in-delay-3">
+           
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow p-2 flex flex-col items-center dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-4">
+                    <img src="image/jeshoots-com-__ZMnefoI3k-unsplash.jpg" alt="Stock cleaning image 1" class="rounded mb-2 object-cover h-48 w-full"/>
+                    <span class="text-sm text-gray-500" data-translate-key="gallery_img1"></span>
+                </div>
+                <div class="bg-white rounded-lg shadow p-2 flex flex-col items-center dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-5">
+                    <img src="image/front-view-hand-with-surgical-glove-cleaning-window.jpg" alt="Stock cleaning image 2" class="rounded mb-2 object-cover h-48 w-full"/>
+                    <span class="text-sm text-gray-500" data-translate-key="gallery_img2"></span>
+                </div>
+                <div class="bg-white rounded-lg shadow p-2 flex flex-col items-center dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-1">
+                    <img src="image/clean-571679.jpg" alt="Stock cleaning image 3" class="rounded mb-2 object-cover h-48 w-full"/>
+                    <span class="text-sm text-gray-500" data-translate-key="gallery_img3"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facebook Reviews -->
+        <section class="mb-10 max-w-3xl mx-auto fade-in fade-in-delay-2">
+            <h2 class="text-2xl font-bold text-green-700 mb-4 text-center dark:text-green-300" data-translate-key="reviews_title">What Our Clients Say</h2>
+            <div class="space-y-6">
+                <div class="bg-green-100 rounded-lg p-4 shadow dark:bg-gray-800 dark:text-gray-100 dark:shadow-lg fade-in fade-in-delay-3">
+                    <p class="italic" data-translate-key="review1">"We could not be more happy with the services that we receive from Lisa, Owain and the team at Cnicht. Over multiple properties their service is professional, consistent and our guests leave great reviews. A big part of that is thanks to the the great team effort at Cnicht. Diolch"</p>
+                    <p class="text-right font-semibold mt-2" data-translate-key="review1_author">- Emma Sloan</p>
+                </div>
+                <div class="bg-green-100 rounded-lg p-4 shadow dark:bg-gray-800 dark:text-gray-100 dark:shadow-lg fade-in fade-in-delay-4">
+                    <p class="italic" data-translate-key="review2">"I have been using Lisa and her team for a few years now and can honestly say I have never had any complaints, in fact I have had nothing but compliments from my guests. The service Lisa provides is super and quite often above and beyond. I highly recommend Cnicht Cleaning. Thank you Lisa and team."</p>
+                    <p class="text-right font-semibold mt-2" data-translate-key="review2_author">- Sally Rosser</p>
+                </div>
+                <div class="bg-green-100 rounded-lg p-4 shadow dark:bg-gray-800 dark:text-gray-100 dark:shadow-lg fade-in fade-in-delay-5">
+                    <p class="italic" data-translate-key="review3">"STS Holidays uses Cnicht Cleaning Services almost exclusively for the properties we manage in Beddgelert. The quality of service and attention to detail is outstanding. This is reflected in the stream of 5 star reviews Cnicht Cleaning Services receive from our customer feedback."</p>
+                    <p class="text-right font-semibold mt-2" data-translate-key="review3_author">- STS Holidays</p>
+                </div>
+            </div>
+            <!-- Facebook Review Iframes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="flex justify-center fade-in fade-in-delay-1">
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fjackie.caddick.5%2Fposts%2Fpfbid0b2uNRUERcaSLRwqH1sHRKYrDR3ftm1ExGsD53q1XAPLE5PWWNGHxv8E97FAkDDThl&show_text=true&width=500" width="500" height="168" style="border:rounded;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="flex justify-center fade-in fade-in-delay-2">
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fjo.hughes.739%2Fposts%2Fpfbid0E9YbniMMyYUZtqDQDwa9stWGWvH3BJoZ4Ggzi4vDwfMy8NCN2ZeFfNKN68uevDZSl&show_text=true&width=500" width="500" height="217" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="flex justify-center md:col-span-2 fade-in fade-in-delay-3">
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fkath.daines%2Fposts%2Fpfbid02CcY9u5hn5ui7oQuTiiK9cNJfJrVSXVm5SHwgFCdYZsa9L6AGFhS6dGjcMoHP7b75l&show_text=true&width=500" width="500" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white rounded-lg shadow p-6 max-w-3xl mx-auto mb-10 dark:bg-gray-800 dark:shadow-lg fade-in fade-in-delay-4">
+            <h2 class="text-2xl font-bold text-green-700 mb-2 dark:text-green-300" data-translate-key="contactinfo_title">Contact Information</h2>
+            <div class="flex flex-col items-center space-y-2">
+                <div class="flex items-center space-x-2"><span class="font-semibold" data-translate-key="contactinfo_phone_label">Phone:</span> <span data-translate-key="contactinfo_phone">07717 882687</span></div>
+                <div class="flex items-center space-x-2"><span class="font-semibold" data-translate-key="contactinfo_address_label">Based In:</span> <span data-translate-key="contactinfo_address">The Old Smithy, Garreg Terrace, LLanfrothen, Gwynedd, LL48 6AQ</span></div>
+                <div class="flex items-center space-x-2"><span class="font-semibold" data-translate-key="contactinfo_email_label">Email:</span> <span data-translate-key="contactinfo_email">info@cnichtcleaningservices.uk</span></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-200 py-4 mt-auto dark:bg-black dark:text-gray-300">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <span data-translate-key="footer_copyright">© Copyright 2025 | Privacy Policy</span>
+            <span data-translate-key="footer_brand">Cnicht Cleaning Services</span>
+        </div>
+    </footer>
+    <script>
+        // Scroll-triggered fade-in animation
+        function handleScrollAnimation() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150; // Trigger when element is 150px from viewport
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initial check for elements already in view
+        handleScrollAnimation();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScrollAnimation);
+
+        // Dark mode toggle logic
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const toggleIcon = document.getElementById('toggleIcon');
+        const html = document.documentElement;
+        let dark = localStorage.getItem('darkMode') === 'true';
+        
+        function setIcon() {
+            if (dark) {
+                toggleIcon.innerHTML = `<svg xmlns='http://www.w3.org/2000/svg' class='h-4 w-4 text-gray-600 mx-auto mt-1' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z' /></svg>`;
+                toggleIcon.style.transform = 'translateX(24px)';
+                html.classList.add('dark');
+            } else {
+                toggleIcon.innerHTML = `<svg xmlns='http://www.w3.org/2000/svg' class='h-4 w-4 text-yellow-500 mx-auto mt-1' fill='none' viewBox='0 0 24 24' stroke='currentColor'><circle cx='12' cy='12' r='5' stroke='currentColor' stroke-width='2' fill='currentColor'/><path stroke='currentColor' stroke-width='2' d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42'/></svg>`;
+                toggleIcon.style.transform = 'translateX(2px)';
+                html.classList.remove('dark');
+            }
+        }
+        
+        setIcon();
+        toggleBtn.addEventListener('click', () => {
+            dark = !dark;
+            localStorage.setItem('darkMode', dark);
+            setIcon();
+        });
+
+        const translations = {
+  cy: {
+    page_title: "Gwasanaethau Glanhau Cnicht",
+    toggle_lang: "English",
+    site_title: "Gwasanaethau Glanhau Cnicht",
+    phone: "07717 882687",
+    email: "info@cnichtcleaningservices.uk",
+    nav_home: "Cartref",
+    nav_services: "Gwasanaethau",
+    nav_gallery: "Oriel",
+    nav_contact: "Cysylltu",
+    welcome_title: "Croeso i\nGwasanaethau Glanhau Cnicht",
+    welcome_desc: "Gyda 14 mlynedd o brofiad yn y diwydiant, mae Gwasanaethau Glanhau Cnicht wedi mireinio ei sgiliau a'i grefft i ddarparu'r gwasanaethau glanhau gorau posibl i chi.",
+    welcome_services_btn: "Ein Gwasanaethau",
+    welcome_contact_btn: "Cysylltwch â ni",
+    about_title: "Ynghylch Gwasanaethau Glanhau Cnicht",
+    about_desc: "Mae Gwasanaethau Glanhau Cnicht yn gwmni glanhau teuluol ac eco-ymwybodol sy'n arbenigo mewn glanhau cartrefi gwyliau a glanhau dwfn gyda dros 14 mlynedd o brofiad. Maent yn ymroddedig i ddarparu atebion glanhau o'r radd flaenaf wedi'u teilwra i'ch anghenion.",
+    about_based: "Wedi'i leoli yn Eryri, Gogledd Cymru:",
+    about_based_desc: "Wedi'i leoli yng ngogoniant Eryri, Gogledd Cymru, mae Gwasanaethau Glanhau Cnicht yn cael ysbrydoliaeth o'i amgylchoedd godidog. Maent yn gwasanaethu ardal hardd Gwynedd a'r cyffiniau.",
+    about_excellence: "Yn Dod â Rhagoriaeth Glanhau atoch:",
+    about_excellence_desc: "Mae Gwasanaethau Glanhau Cnicht yn cynnig gwasanaethau glanhau symudol, gan sicrhau cyfleustra, proffesiynoldeb ac arbenigedd ar garreg eich drws. P'un a oes angen glanhau dwfn unwaith neu waith cynnal a chadw rheolaidd arnoch, gall eu tîm ateb eich holl anghenion glanhau.",
+    divider1_title: "Rhagoriaeth Broffesiynol",
+    divider1_desc: "Yn darparu gwasanaethau glanhau o ansawdd gyda sylw i fanylion",
+    divider2_title: "Atebion Eco-Gyfeillgar",
+    divider2_desc: "Wedi'u hymrwymo i arferion glanhau sy'n gyfrifol am yr amgylchedd",
+    usp_title: "Pwyntiau Gwerthu Unigryw",
+    usp_friendly_title: "Gwasanaeth Cyfeillgar a Phroffesiynol",
+    usp_friendly_desc: "Mae'r tîm yn adnabyddus am eu hagwedd gyfeillgar a phroffesiynol, gan drin eich lle fel eu lle eu hunain, gan ychwanegu cyffyrddiad personol at bob swydd glanhau.",
+    usp_insured_title: "Wedi'i Yswirio'n Llawn",
+    usp_insured_desc: "Mae Gwasanaethau Glanhau Cnicht wedi'u hyswirio'n llawn, gan ddiogelu chi a'ch eiddo. Maent yn cadw i fyny gyda gweithdrefnau newid drosodd diogelwch tân ac yn cynnal cofnodion digidol ar gyfer pob cleient, gan sicrhau cydymffurfiad. Mae eu staff yn derbyn hyfforddiant wardeiniaid tân, gan gyfrannu at lefel uwch o ddiogelwch.",
+    usp_eco_title: "Moesegol ac Eco-Gyfeillgar",
+    usp_eco_desc: "Fel busnes moesegol, maent yn arbenigo mewn gwasanaethau glanhau eco-gyfeillgar, gan ddangos ymrwymiad i warchod yr amgylchedd.",
+    usp_history_title: "Hanes y Cwmni",
+    usp_history_desc: "Wedi'i sefydlu fel partneriaeth yn 2019, mae Gwasanaethau Glanhau Cnicht bellach yn ddau fusnes ar wahân: Gwasanaethau Glanhau Cnicht a Gwasanaethau Glanhau Allanol Cnicht. Mae'r datblygiad diweddar hwn yn adlewyrchu eu hymrwymiad i ddarparu atebion glanhau arbenigol a theilwra i'ch anghenion.",
+    usp_experience_title: "Profiad sy'n Cyfri",
+    usp_experience_desc: "Gyda phrofiad glanhau ers 2010, mae eu tîm wedi adeiladu sylfaen gadarn o arbenigedd a rhagoriaeth. Dechreuodd eu taith gyda gweledigaeth i gynnig gwasanaethau glanhau o safon, moesegol a phroffesiynol i gymuned Gwynedd a thu hwnt.",
+    usp_trusted_title: "Ymddiriedwyd gan Enwau Blaenllaw",
+    usp_trusted_desc: "Mae eu hymrwymiad i ragoriaeth wedi ennill ymddiriedaeth rhai o'r sefydliadau mwyaf parchus yn y diwydiant. Maent yn falch o fod yn gyflenwr dewisol i Sykes a gwasanaethau twristiaeth Eryri yn ardal Beddgelert, sy'n gydnabyddiaeth o'r ansawdd a'r dibynadwyedd a ddaw gyda'u gwasanaethau. Maent hefyd yn gweithio gyda National Trust a Forest Holidays.",
+    usp_tourism_title: "Aelod o Dwristiaeth Beddgelert",
+    usp_tourism_desc: "Mae Gwasanaethau Glanhau Cnicht hefyd yn falch o fod yn aelod o Dwristiaeth Beddgelert, ffederasiwn uchel ei barch. Mae'r berthynas hon yn amlygu eu hymrwymiad diwyro i ddarparu gwasanaethau glanhau eithriadol. Trwy bartneru â Thwristiaeth Beddgelert, maent yn cynnal safonau blaenllaw'r diwydiant yn gyson.",
+    usp_ecoex_title: "Rhagoriaeth Glanhau Eco-Gyfeillgar",
+    usp_ecoex_desc: "Mae Gwasanaethau Glanhau Cnicht yn arbenigo mewn gwasanaethau glanhau eco-gyfeillgar, gan gynnal safonau uchel ym mhob tasg.",
+   
+    usp_join_title: "Ymunwch â'n Tîm",
+    usp_join_desc: "Mae Gwasanaethau Glanhau Cnicht yn chwilio am staff ymroddedig sy'n rhannu eu hangerdd am lanhau. Os ydych am fod yn rhan o'u gweithle cadarnhaol, cysylltwch. Mae eu hamgylchedd cyfeillgar a hapus yn llawn egni da, sy'n adlewyrchu ansawdd eu gwasanaethau a'r awyrgylch gadarnhaol a feithrinnir.",
+
+    reviews_title: "Barn Ein Cleientiaid",
+    review1: "Ni allem fod yn fwy hapus gyda'r gwasanaethau a gawn gan Lisa, Owain a'r tîm yn Cnicht. Dros sawl eiddo mae eu gwasanaeth yn broffesiynol, yn gyson ac mae ein gwesteion yn gadael adolygiadau gwych. Mae rhan fawr o hynny diolch i ymdrech tîm gwych Cnicht. Diolch",
+    review1_author: "- Emma Sloan",
+    review2: "Rwyf wedi defnyddio Lisa a'i thîm ers blynyddoedd ac yn onest, nid wyf erioed wedi cael unrhyw gwynion, mewn gwirionedd dim ond canmoliaeth gan fy ngwesteion. Mae'r gwasanaeth a ddarperir gan Lisa yn rhagorol ac yn aml yn mynd y tu hwnt i'r disgwyl. Rwy'n argymell Cnicht Cleaning yn fawr. Diolch Lisa a'r tîm.",
+    review2_author: "- Sally Rosser",
+    review3: "Mae STS Holidays yn defnyddio Gwasanaethau Glanhau Cnicht bron yn unig ar gyfer yr eiddo rydym yn eu rheoli yn Beddgelert. Mae ansawdd y gwasanaeth a'r sylw i fanylion yn rhagorol. Mae hyn yn cael ei adlewyrchu yn y llu o adolygiadau 5 seren y mae Gwasanaethau Glanhau Cnicht yn eu derbyn gan ein cwsmeriaid.",
+    review3_author: "- STS Holidays",
+    contactinfo_title: "Gwybodaeth Gyswllt",
+    contactinfo_phone_label: "Ffôn:",
+    contactinfo_phone: "07717 882687",
+    contactinfo_address_label: "Wedi'i Leoli Yn:",
+    contactinfo_address: "The Old Smithy, Garreg Terrace, LLanfrothen, Gwynedd, LL48 6AQ",
+    contactinfo_email_label: "E-bost:",
+    contactinfo_email: "info@cnichtcleaningservices.uk",
+    footer_copyright: "© Hawlfraint 2025 | Polisi Preifatrwydd",
+    footer_brand: "Gwasanaethau Glanhau Cnicht"
+  },
+  en: {
+    page_title: "Cnicht Cleaning Services",
+    toggle_lang: "Cymraeg",
+    site_title: "Cnicht Cleaning Services",
+    phone: "07717 882687",
+    email: "info@cnichtcleaningservices.uk",
+    nav_home: "Home",
+    nav_services: "Services",
+    nav_gallery: "Gallery",
+    nav_contact: "Contact",
+    welcome_title: "Welcome to\nCnicht Cleaning Services",
+    welcome_desc: "With 14 years of experience in the industry, Cnicht Cleaning Services has honed its skills and perfected its craft to provide you with the best cleaning services possible.",
+    welcome_services_btn: "Our Services",
+    welcome_contact_btn: "Contact us",
+    about_title: "About Cnicht Cleaning Services",
+    about_desc: "Cnicht Cleaning Services is a family-owned and eco-conscious cleaning company specialising in holiday home and deep cleaning services with over 14 years of experience. They are committed to providing top-notch cleaning solutions tailored to your needs.",
+    about_based: "Based in Snowdonia, North Wales:",
+    about_based_desc: "Nestled in the breathtaking beauty of Snowdonia, North Wales, Cnicht Cleaning Services finds inspiration in its stunning surroundings. They serve the picturesque region of Gwynedd and its surrounding areas.",
+    about_excellence: "Bringing Cleaning Excellence to You:",
+    about_excellence_desc: "Cnicht Cleaning Services offers mobile cleaning services, ensuring convenience, professionalism, and expertise at your doorstep. Whether you need a one-off deep clean or regular maintenance, their team can meet all your cleaning needs.",
+    divider1_title: "Professional Excellence",
+    divider1_desc: "Delivering quality cleaning services with attention to detail",
+    divider2_title: "Eco-Friendly Solutions",
+    divider2_desc: "Committed to environmentally responsible cleaning practices",
+    usp_title: "Unique Selling Points",
+    usp_friendly_title: "Friendly and Professional Service",
+    usp_friendly_desc: "Known for their friendly and professional approach, the team at Cnicht Cleaning Services treats your space as if it were their own, adding a personal touch to every cleaning job.",
+    usp_insured_title: "Fully Insured",
+    usp_insured_desc: "Cnicht Cleaning Services is fully insured, safeguarding you and your property. They stay updated on fire safety changeover procedures and maintain digital records for all clients, ensuring compliance. Their staff members undergo fire warden training, contributing to a heightened level of safety.",
+    usp_eco_title: "Ethical and Eco-Friendly",
+    usp_eco_desc: "As an ethically run business, they specialise in eco-friendly cleaning services, demonstrating a commitment to preserving the environment.",
+    usp_history_title: "Company History",
+    usp_history_desc: "Established as a partnership in 2019, Cnicht Cleaning Services has evolved into two separate businesses: Cnicht Cleaning Services and Cnicht External Cleaning Services. This recent development reflects their commitment to providing specialised and tailored cleaning solutions to meet your needs.",
+    usp_experience_title: "Experience That Counts",
+    usp_experience_desc: "With cleaning experience dating back to 2010, their team has built a solid foundation of expertise and excellence. Their journey began with a vision to offer top-quality, ethical, and professional cleaning services to the local Gwynedd community and beyond.",
+    usp_trusted_title: "Trusted by Leading Names",
+    usp_trusted_desc: "Their commitment to excellence has earned them the trust of some of the most respected organisations in the industry. They are proud to be a preferred supplier for Sykes and Snowdonia tourist services in the Beddgelert area, a recognition of the quality and reliability they bring to their services. They are also proud to work with National Trust and Forest Holidays.",
+    usp_tourism_title: "Beddgelert Tourism Member",
+    usp_tourism_desc: "Cnicht Cleaning Services is also proud to be a member of Beddgelert Tourism, a highly regarded federation. This affiliation highlights their unwavering commitment to providing exceptional cleaning services. By partnering with Beddgelert Tourism, they consistently uphold industry-leading standards.",
+    usp_ecoex_title: "Eco-Friendly Cleaning Excellence",
+    usp_ecoex_desc: "Cnicht Cleaning Services specialises in eco-friendly cleaning services, maintaining high-quality standards in every task they undertake.",
+    
+    usp_join_title: "Join Their Team",
+    usp_join_desc: "Cnicht Cleaning Services is seeking dedicated staff who share their passion for cleaning. If you want to be a part of their positive workplace, please get in touch. Their friendly and happy environment is filled with great vibes, reflecting the quality of their services and the positive atmosphere they foster.",
+ 
+
+    reviews_title: "What Our Clients Say",
+    review1: "We could not be more happy with the services that we receive from Lisa, Owain and the team at Cnicht. Over multiple properties their service is professional, consistent and our guests leave great reviews. A big part of that is thanks to the the great team effort at Cnicht. Diolch",
+    review1_author: "- Emma Sloan",
+    review2: "I have been using Lisa and her team for a few years now and can honestly say I have never had any complaints, in fact I have had nothing but compliments from my guests. The service Lisa provides is super and quite often above and beyond. I highly recommend Cnicht Cleaning. Thank you Lisa and team.",
+    review2_author: "- Sally Rosser",
+    review3: "STS Holidays uses Cnicht Cleaning Services almost exclusively for the properties we manage in Beddgelert. The quality of service and attention to detail is outstanding. This is reflected in the stream of 5 star reviews Cnicht Cleaning Services receive from our customer feedback.",
+    review3_author: "- STS Holidays",
+    contactinfo_title: "Contact Information",
+    contactinfo_phone_label: "Phone:",
+    contactinfo_phone: "07717 882687",
+    contactinfo_address_label: "Based In:",
+    contactinfo_address: "The Old Smithy, Garreg Terrace, LLanfrothen, Gwynedd, LL48 6AQ",
+    contactinfo_email_label: "Email:",
+    contactinfo_email: "info@cnichtcleaningservices.uk",
+    footer_copyright: "© Copyright 2025 | Privacy Policy",
+    footer_brand: "Cnicht Cleaning Services"
+  }
+};
+
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+          localStorage.setItem('lang', lang);
+          document.querySelectorAll('[data-translate-key]').forEach(el => {
+            const key = el.getAttribute('data-translate-key');
+            if (translations[lang][key]) {
+              el.textContent = translations[lang][key];
+            }
+          });
+          if (translations[lang]['page_title']) {
+            document.title = translations[lang]['page_title'];
+          }
+          const toggleBtn = document.getElementById('translateToggle');
+          if (toggleBtn && translations[lang]['toggle_lang']) {
+            toggleBtn.textContent = translations[lang]['toggle_lang'];
+          }
+        }
+        document.getElementById('translateToggle').addEventListener('click', () => {
+          const currentLang = localStorage.getItem('lang') || 'en';
+          setLanguage(currentLang === 'en' ? 'cy' : 'en');
+        });
+        setLanguage(localStorage.getItem('lang') || 'en');
+
+        document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("translateToggle");
+  const thumb = document.getElementById("langToggleThumb");
+  const icon = document.getElementById("langToggleIcon");
+
+  let lang = "en";
+
+  toggle.addEventListener("click", () => {
+    lang = lang === "en" ? "cy" : "en";
+
+    // Move thumb
+    if (lang === "cy") {
+      thumb.style.transform = "translateX(48px)";
+      icon.textContent = "";
+    } else {
+      thumb.style.transform = "translateX(4px)";
+      icon.textContent = "";
+    }
+
+    // Trigger language switch function (you must have this already)
+    switchLanguage(lang);
+  });
+
+  // Optional: Set initial position
+  thumb.style.transform = "translateX(4px)";
+});
+
+        // Burger menu logic
+        const burgerMenuBtn = document.getElementById('burgerMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burgerMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Optionally close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+    </script>
+</body>
+</html> 

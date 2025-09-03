@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Cnicht Cleaning Services</title>
+    <link rel="icon" type="image/png" href="image/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen dark:bg-gray-900 dark:text-gray-100">
+
+
+    <!-- Header/Nav -->
+    <header class="bg-white shadow dark:bg-gray-800 dark:shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-4 px-6">
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-6 text-center md:text-left w-full justify-center items-center md:justify-start md:items-center">
+                <img src="image/logo.png" alt="Cnicht Cleaning Services Logo" class="h-20 w-20 mb-2 md:mb-0 md:mr-3 inline-block align-middle" style="object-fit:contain;" />
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="font-bold text-2xl text-green-700" data-translate-key="site_title">Cnicht Cleaning Services</span>
+                    <span class="text-sm mt-2 md:mt-0" data-translate-key="phone">07717 882687</span>
+                    <span class="text-sm" data-translate-key="email">info@cnichtcleaningservices.uk</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Consistent Navigation Bar -->
+    <nav class="bg-white shadow w-full relative sticky top-0 z-50 dark:bg-gray-800 dark:shadow-lg">
+        <div class="container mx-auto flex justify-between items-center py-3 px-6">
+            <!-- Burger menu button for mobile -->
+            <button id="burgerMenuBtn" class="md:hidden flex items-center px-2 py-1 border rounded text-green-700 border-green-700 dark:text-green-300 dark:border-green-300 focus:outline-none" aria-label="Open menu">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <!-- Nav links -->
+            <div id="navLinks" class="hidden md:flex space-x-4 items-center">
+                <a href="index.html" class="text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_home">Home</a>
+                <a href="services.html" class="text-green-700 hover:underline font-bold dark:text-green-300" data-translate-key="nav_services">Services</a>
+                <a href="gallery.html" class="text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_gallery">Gallery</a>
+                <a href="contact.html" class="text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_contact">Contact</a>
+            </div>
+            <!-- Language and Dark Mode Toggles -->
+            <div class="flex items-center gap-3 ml-4">
+                <span id="langLabelEn" class="font-semibold transition-colors duration-300"></span>
+                <button id="translateToggle" class="relative inline-flex h-9 w-20 items-center rounded-full bg-gray-300 dark:bg-gray-600 transition-colors duration-300 ring-2 ring-transparent focus:outline-none focus:ring-green-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+                    <span id="langToggleThumb" class="inline-block h-8 w-8 transform rounded-full bg-white dark:bg-gray-100 shadow-md transition-transform duration-300 ease-in-out flex items-center justify-center translate-x-1" style="transition: transform 0.3s ease;">
+                        <span id="langToggleIcon" class="text-green-700 dark:text-green-300 font-bold text-sm"></span>
+                    </span>
+                </button>
+                <span id="langLabelCy" class="font-semibold transition-colors duration-300"></span>
+                <button id="darkModeToggle" class="relative inline-flex h-8 w-14 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                    <span class="inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition-transform duration-300 ease-in-out" id="toggleIcon">
+                        <!-- Sun/Moon SVG will be injected here -->
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-gray-800 px-6 pb-4">
+            <a href="index.html" class="block py-2 text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_home">Home</a>
+            <a href="services.html" class="block py-2 text-green-700 hover:underline font-bold dark:text-green-300" data-translate-key="nav_services">Services</a>
+            <a href="gallery.html" class="block py-2 text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_gallery">Gallery</a>
+            <a href="contact.html" class="block py-2 text-green-700 hover:underline dark:text-green-300" data-translate-key="nav_contact">Contact</a>
+        </div>
+    </nav>
+    <main class="flex-1 container mx-auto px-4 py-8 max-w-3xl dark:bg-gray-900 dark:text-gray-100">
+        <h1 class="text-3xl font-bold text-center text-green-700 mb-8 dark:text-green-300 fade-in" data-translate-key="services_title">Our Services</h1>
+        <div id="services-accordion" class="space-y-4">
+            <!-- Service Accordions -->
+            <div class="fade-in fade-in-delay-1">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service1" data-translate-key="service1_title">Holiday Properties</button>
+                <div id="service1" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service1_desc">
+                    Cnicht Cleaning Services takes pride in offering specialised cleaning services for holiday properties. Their dedicated team ensures that holiday homes are immaculate and ready to welcome guests. They understand the importance of making a great impression on visitors, and their cleaning services guarantee a clean and inviting environment.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-2">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service2" data-translate-key="service2_title">Deep Cleans</button>
+                <div id="service2" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service2_desc">
+                    Their deep cleaning service revitalises spaces. They go beyond the surface, tackling hidden dirt, grime, and germs. Their deep cleaning services guarantee a fresh and hygienic environment, whether a home, office, or commercial property. Experience the difference in cleanliness and enjoy a pristine atmosphere.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-3">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service3" data-translate-key="service3_title">After Build Cleans</button>
+                <div id="service3" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service3_desc">
+                    Construction and renovation projects often leave a mess behind. Cnicht Cleaning Services' after-build cleaning service is here to restore properties to their pristine state. They remove debris, dust, and residue, leaving spaces ready for use or occupancy.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-4">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service4" data-translate-key="service4_title">End of Tenancy Cleans</button>
+                <div id="service4" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service4_desc">
+                    When it's time to move out, leave the cleaning to them. Their end-of-tenancy cleaning service ensures properties are spotless and in excellent condition for the next occupant. They pay meticulous attention to detail, meeting the highest cleaning standards.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-5">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service5" data-translate-key="service5_title">Domestic Cleaning</button>
+                <div id="service5" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service5_desc">
+                    Cnicht Cleaning Services understands the importance of a clean and comfortable home. Their domestic cleaning service is customised to meet the unique needs of households. Whether clients require regular maintenance or occasional cleaning, their team is here to assist. The professional cleaners at Cnicht Cleaning Services bring a wealth of experience and dedication to every home they service.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-1">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service6" data-translate-key="service6_title">Check & Refresh Service</button>
+                <div id="service6" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service6_desc">
+                    For holiday property owners, their check and refresh services are essential. They inspect properties, ensuring everything is in working order, and provide a quick refresh to maintain inviting appeal. This service is ideal for keeping holiday homes in top condition between guest stays.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-2">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service7" data-translate-key="service7_title">Log Burner Cleaning</button>
+                <div id="service7" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service7_desc">
+                    A clean log burner enhances efficiency and contributes to a safer environment. Cnicht Cleaning Services' log burner cleaning service effectively removes creosote and soot build-up, ensuring optimal operation of log burners.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-3">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service8" data-translate-key="service8_title">Key Holding Service</button>
+                <div id="service8" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service8_desc">
+                    Their key holding service offers peace of mind. They securely hold and manage keys to various properties, ensuring access is available when needed.
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-4">
+                <button class="w-full text-left px-4 py-3 bg-green-100 rounded font-semibold text-lg focus:outline-none accordion-title dark:bg-gray-800 dark:text-gray-100" data-target="service9" data-translate-key="service9_title">PAT Testing Services</button>
+                <div id="service9" class="hidden px-4 py-3 bg-white border rounded-b dark:bg-gray-900 dark:border-gray-700" data-translate-key="service9_desc">
+                    As of December 1st, Cnicht Cleaning Services is proud to offer Portable Appliance Testing (PAT) services. The qualified team ensures the safety and functionality of electrical appliances, crucial for holiday properties.
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 text-center fade-in fade-in-delay-5">
+            <p class="text-lg font-semibold dark:text-gray-200" data-translate-key="services_summary">At Cnicht Cleaning Services, we provide top-quality cleaning services tailored to clients' needs. Our professional team takes pride in delivering outstanding results and maintaining the highest standards of cleanliness. Contact us today to discuss your cleaning requirements and let Cnicht Cleaning Services make your property shine.</p>
+        </div>
+    </main>
+    <footer class="bg-gray-800 text-gray-200 py-4 mt-auto dark:bg-black dark:text-gray-300">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <span data-translate-key="footer_copyright">© Copyright 2025 | Privacy Policy</span>
+            <span data-translate-key="footer_brand">Cnicht Cleaning Services</span>
+        </div>
+    </footer>
+    <script>
+        // Accordion logic
+        document.querySelectorAll('.accordion-title').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const target = document.getElementById(this.dataset.target);
+                if (target.classList.contains('hidden')) {
+                    document.querySelectorAll('#services-accordion > div > div').forEach(div => div.classList.add('hidden'));
+                    target.classList.remove('hidden');
+                } else {
+                    target.classList.add('hidden');
+                }
+            });
+        });
+
+        // Scroll-triggered fade-in animation
+        function handleScrollAnimation() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150; // Trigger when element is 150px from viewport
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initial check for elements already in view
+        handleScrollAnimation();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScrollAnimation);
+
+        // Dark mode toggle logic
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const toggleIcon = document.getElementById('toggleIcon');
+        const html = document.documentElement;
+        let dark = localStorage.getItem('darkMode') === 'true';
+        function setIcon() {
+            if (dark) {
+                toggleIcon.innerHTML = `<svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-gray-200' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z' /></svg>`;
+                toggleIcon.style.transform = 'translateX(28px)';
+                html.classList.add('dark');
+            } else {
+                toggleIcon.innerHTML = `<svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-yellow-500' fill='none' viewBox='0 0 24 24' stroke='currentColor'><circle cx='12' cy='12' r='5' stroke='currentColor' stroke-width='2' fill='currentColor'/><path stroke='currentColor' stroke-width='2' d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42'/></svg>`;
+                toggleIcon.style.transform = 'translateX(0)';
+                html.classList.remove('dark');
+            }
+        }
+        setIcon();
+        toggleBtn.addEventListener('click', () => {
+            dark = !dark;
+            localStorage.setItem('darkMode', dark);
+            setIcon();
+        });
+
+        const translations = {
+          en: {
+            site_title: "Cnicht Cleaning Services",
+            phone: "07717 882687",
+            email: "info@cnichtcleaningservices.uk",
+            nav_home: "Home",
+            nav_services: "Services",
+            nav_gallery: "Gallery",
+            nav_contact: "Contact",
+            services_title: "Our Services",
+            service1_title: "Holiday Properties",
+            service1_desc: "Cnicht Cleaning Services takes pride in offering specialised cleaning services for holiday properties. Their dedicated team ensures that holiday homes are immaculate and ready to welcome guests. They understand the importance of making a great impression on visitors, and their cleaning services guarantee a clean and inviting environment.",
+            service2_title: "Deep Cleans",
+            service2_desc: "Their deep cleaning service revitalises spaces. They go beyond the surface, tackling hidden dirt, grime, and germs. Their deep cleaning services guarantee a fresh and hygienic environment, whether a home, office, or commercial property. Experience the difference in cleanliness and enjoy a pristine atmosphere.",
+            service3_title: "After Build Cleans",
+            service3_desc: "Construction and renovation projects often leave a mess behind. Cnicht Cleaning Services' after-build cleaning service is here to restore properties to their pristine state. They remove debris, dust, and residue, leaving spaces ready for use or occupancy.",
+            service4_title: "End of Tenancy Cleans",
+            service4_desc: "When it's time to move out, leave the cleaning to them. Their end-of-tenancy cleaning service ensures properties are spotless and in excellent condition for the next occupant. They pay meticulous attention to detail, meeting the highest cleaning standards.",
+            service5_title: "Domestic Cleaning",
+            service5_desc: "Cnicht Cleaning Services understands the importance of a clean and comfortable home. Their domestic cleaning service is customised to meet the unique needs of households. Whether clients require regular maintenance or occasional cleaning, their team is here to assist. The professional cleaners at Cnicht Cleaning Services bring a wealth of experience and dedication to every home they service.",
+            service6_title: "Check & Refresh Service",
+            service6_desc: "For holiday property owners, their check and refresh services are essential. They inspect properties, ensuring everything is in working order, and provide a quick refresh to maintain inviting appeal. This service is ideal for keeping holiday homes in top condition between guest stays.",
+            service7_title: "Log Burner Cleaning",
+            service7_desc: "A clean log burner enhances efficiency and contributes to a safer environment. Cnicht Cleaning Services' log burner cleaning service effectively removes creosote and soot build-up, ensuring optimal operation of log burners.",
+            service8_title: "Key Holding Service",
+            service8_desc: "Their key holding service offers peace of mind. They securely hold and manage keys to various properties, ensuring access is available when needed.",
+            service9_title: "PAT Testing Services",
+            service9_desc: "As of December 1st, Cnicht Cleaning Services is proud to offer Portable Appliance Testing (PAT) services. The qualified team ensures the safety and functionality of electrical appliances, crucial for holiday properties.",
+            services_summary: "At Cnicht Cleaning Services, we provide top-quality cleaning services tailored to clients' needs. Our professional team takes pride in delivering outstanding results and maintaining the highest standards of cleanliness. Contact us today to discuss your cleaning requirements and let Cnicht Cleaning Services make your property shine.",
+            footer_copyright: "© Copyright 2025 | Privacy Policy",
+            footer_brand: "Cnicht Cleaning Services"
+          },
+          cy: {
+            site_title: "Gwasanaethau Glanhau Cnicht",
+            phone: "07717 882687",
+            email: "info@cnichtcleaningservices.uk",
+            nav_home: "Hafan",
+            nav_services: "Gwasanaethau",
+            nav_gallery: "Oriel",
+            nav_contact: "Cysylltu",
+            services_title: "Ein Gwasanaethau",
+            service1_title: "Eiddo Gwyliau",
+            service1_desc: "Mae Gwasanaethau Glanhau Cnicht yn ymfalchïo mewn cynnig gwasanaethau glanhau ar benigol ar gyfer eiddo gwyliau. Mae eu tîm ymroddedig yn sicrhau bod cartrefi gwyliau yn lân ac yn barod i groesawu gwesteion. Maent yn deall pwysigrwydd creu argraff wych ar ymwelwyr, ac mae eu gwasanaethau glanhau yn gwarantu amgylchedd glân a chroesawgar.",
+            service2_title: "Glanhau Dwfn",
+            service2_desc: "Mae eu gwasanaeth glanhau dwfn yn adfywio mannau. Maent yn mynd y tu hwnt i'r wyneb, gan ddelio â baw cudd, baw a germau. Mae eu gwasanaethau glanhau dwfn yn gwarantu amgylchedd ffres a hylan, boed yn gartref, swyddfa neu eiddo masnachol. Profwch y gwahaniaeth mewn glendid a mwynhewch awyrgylch perffaith.",
+            service3_title: "Glanhau Ôl-Adeiladu",
+            service3_desc: "Mae prosiectau adeiladu ac adnewyddu yn aml yn gadael llanast ar ôl. Mae gwasanaeth glanhau ôl-adeiladu Gwasanaethau Glanhau Cnicht yma i adfer eiddo i'w cyflwr perffaith. Maent yn tynnu sbwriel, llwch ac olion, gan adael mannau'n barod i'w defnyddio neu eu meddiannu.",
+            service4_title: "Glanhau Diwedd Tenantiaeth",
+            service4_desc: "Pan mae'n bryd symud allan, gadewch y glanhau i nhw. Mae eu gwasanaeth glanhau diwedd tenantiaeth yn sicrhau bod eiddo'n lân ac mewn cyflwr rhagorol ar gyfer y preswylydd nesaf. Maent yn talu sylw manwl, gan gyrraedd y safonau glanhau uchaf.",
+            service5_title: "Glanhau Domestig",
+            service5_desc: "Mae Gwasanaethau Glanhau Cnicht yn deall pwysigrwydd cartref glân a chyfforddus. Mae eu gwasanaeth glanhau domestig wedi'i deilwra i ddiwallu anghenion unigryw cartrefi. P'un a oes angen cynnal a chadw rheolaidd neu lanhau achlysurol ar gleientiaid, mae eu tîm yma i helpu. Mae'r glanhawyr proffesiynol yn Gwasanaethau Glanhau Cnicht yn dod â chyfoeth o brofiad ac ymroddiad i bob cartref y maent yn ei wasanaethu.",
+            service6_title: "Gwasanaeth Gwirio a Ffresio",
+            service6_desc: "I berchnogion eiddo gwyliau, mae eu gwasanaethau gwirio a ffresio yn hanfodol. Maent yn archwilio eiddo, gan sicrhau bod popeth yn gweithio'n iawn, ac yn darparu ffresiad cyflym i gynnal apêl groesawgar. Mae'r gwasanaeth hwn yn ddelfrydol ar gyfer cadw cartrefi gwyliau mewn cyflwr rhagorol rhwng arhosiadau gwesteion.",
+            service7_title: "Glanhau Llosgydd Pren",
+            service7_desc: "Mae llosgydd pren glân yn gwella effeithlonrwydd ac yn cyfrannu at amgylchedd mwy diogel. Mae gwasanaeth glanhau llosgydd pren Gwasanaethau Glanhau Cnicht yn tynnu creosot a thagfeydd lludw yn effeithiol, gan sicrhau gweithrediad gorau posibl y llosgydd pren.",
+            service8_title: "Gwasanaeth Dal Allweddi",
+            service8_desc: "Mae eu gwasanaeth dal allweddi yn cynnig tawelwch meddwl. Maent yn dal ac yn rheoli allweddi i wahanol eiddo yn ddiogel, gan sicrhau bod mynediad ar gael pan fo angen.",
+            service9_title: "Gwasanaethau Profi PAT",
+            service9_desc: "O 1 Rhagfyr, mae Gwasanaethau Glanhau Cnicht yn falch o gynnig gwasanaethau Profi Dyfeisiau Cludadwy (PAT). Mae'r tîm cymwys yn sicrhau diogelwch a gweithrediad dyfeisiau trydanol, sy'n hanfodol ar gyfer eiddo gwyliau.",
+            services_summary: "Yn Gwasanaethau Glanhau Cnicht, rydym yn darparu gwasanaethau glanhau o'r radd flaenaf wedi'u teilwra i anghenion cleientiaid. Mae ein tîm proffesiynol yn ymfalchïo mewn cyflawni canlyniadau rhagorol a chynnal y safonau glanhau uchaf. Cysylltwch â ni heddiw i drafod eich gofynion glanhau a gadewch i Gwasanaethau Glanhau Cnicht wneud i'ch eiddo ddisgleirio.",
+            footer_copyright: "© Hawlfraint 2025 | Polisi Preifatrwydd",
+            footer_brand: "Gwasanaethau Glanhau Cnicht"
+          }
+        };
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+          localStorage.setItem('lang', lang);
+          document.querySelectorAll('[data-translate-key]').forEach(el => {
+            const key = el.getAttribute('data-translate-key');
+            if (translations[lang][key]) {
+              el.textContent = translations[lang][key];
+            }
+          });
+          document.getElementById('translateToggle').textContent = lang === 'en' ? 'Cymraeg' : 'English';
+        }
+        document.getElementById('translateToggle').addEventListener('click', () => {
+          const currentLang = localStorage.getItem('lang') || 'en';
+          setLanguage(currentLang === 'en' ? 'cy' : 'en');
+        });
+        setLanguage(localStorage.getItem('lang') || 'en');
+
+        // Language toggle slide switch logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("translateToggle");
+            const thumb = document.getElementById("langToggleThumb");
+            const icon = document.getElementById("langToggleIcon");
+            let lang = localStorage.getItem('lang') || 'en';
+            function updateLangToggleUI(lang) {
+                if (lang === 'cy') {
+                    thumb.style.transform = 'translateX(48px)';
+                    icon.textContent = 'CY';
+                } else {
+                    thumb.style.transform = 'translateX(4px)';
+                    icon.textContent = 'EN';
+                }
+            }
+            toggle.addEventListener("click", () => {
+                lang = lang === "en" ? "cy" : "en";
+                setLanguage(lang);
+                updateLangToggleUI(lang);
+            });
+            updateLangToggleUI(lang);
+        });
+
+        // Burger menu logic
+        const burgerMenuBtn = document.getElementById('burgerMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burgerMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Optionally close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html> 
